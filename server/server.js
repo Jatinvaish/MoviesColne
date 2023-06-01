@@ -7,7 +7,8 @@ const path = require("path");
 // middleware
 app.use(cors({
     //adding the ability to use credentials with cookies
-    credentials:true
+    credentials:true,
+    origin: '*'
 }));//means we can access the other things that store in cokkies with token , exipery date etc...
 app.use(express.json());
 
