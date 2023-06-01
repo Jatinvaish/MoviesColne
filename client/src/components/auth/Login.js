@@ -17,7 +17,7 @@ const Login = () => {
     const [emailError, setEmailError] = useState()
     const [passwordError, setPasswordError] = useState()
     useEffect(() => {
-        axios.get(`http://localhost:8000/api/users/loggeduser?email=${email}`).then(res => { console.log(res.data.user._id) })
+        axios.get(`/api/users/loggeduser?email=${email}`).then(res => { console.log(res.data.user._id) })
     }, [email])
 
     const user = {
@@ -26,9 +26,9 @@ const Login = () => {
     }
 
     const LoginHandle = () => {
-        axios.post('http://localhost:8000/api/users/login', user).then(res => {
+        axios.post('/api/users/login', user).then(res => {
             localStorage.setItem('jwt', '124q3cdfgdraw3q244444w555cfgudtse57w34s5eu8cfise58');
-            axios.get(`http://localhost:8000/api/users/loggeduser?email=${email}`).then(res => { localStorage.setItem("userid", res.data.user._id) });
+            axios.get(`/api/users/loggeduser?email=${email}`).then(res => { localStorage.setItem("userid", res.data.user._id) });
             localStorage.setItem('loggeduser', email);
             navigate("/");
             window.location.reload()

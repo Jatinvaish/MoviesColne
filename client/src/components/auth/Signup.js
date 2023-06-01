@@ -28,7 +28,7 @@ const Signup = () => {
         confirmPassword,
     }
     const registerHandler = () => {
-        axios.post("http://localhost:8000/api/users/register",user).then(res=>navigate('/login'))
+        axios.post("/api/users/register",user).then(res=>navigate('/login'))
         .catch(err=>console.log(err))
     }
     return (
