@@ -16,7 +16,7 @@ const Modal = (props) => {
     </div>
   );
 };
-
+// declare datatype in react jsx (in tsx we just use interfaces for that)
 Modal.propTypes = {
   active: PropTypes.bool,
   id: PropTypes.string,

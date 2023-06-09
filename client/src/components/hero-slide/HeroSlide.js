@@ -112,7 +112,7 @@ const TrailerModal = (props) => {
   const item = props.item;
 
   const iframeRef = useRef(null);
-
+//set the iframe stribute
   const onClose = () => iframeRef.current.setAttribute('src', '');
 
   return (
